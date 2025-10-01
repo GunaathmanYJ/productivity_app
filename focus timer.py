@@ -50,7 +50,7 @@ with col2:
 if st.session_state.timer_start:
     elapsed = datetime.now() - st.session_state.timer_start
     total_seconds = int(elapsed.total_seconds())
-    if total_seconds > 0:  # Only show if actual time has passed
+    if total_seconds > 0: 
         hours, remainder = divmod(total_seconds, 3600)
         minutes, seconds = divmod(remainder, 60)
         st.info(f"Timer running: {hours}h {minutes}m {seconds}s")
@@ -61,3 +61,4 @@ if st.button("Generate Report"):
         st.dataframe(st.session_state.data)
     else:
         st.info("No tasks logged yet.")
+
